@@ -1,38 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
-function App() {
+import { AppRoutes } from './routes';
+import { WorkoutsList } from './features/workouts/components/workouts-list';
+import { Workout } from './features/workouts/components/workout';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a className="App-link" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
-            React
-          </a>
-          <span>, </span>
-          <a className="App-link" href="https://redux.js.org/" target="_blank" rel="noopener noreferrer">
-            Redux
-          </a>
-          <span>, </span>
-          <a className="App-link" href="https://redux-toolkit.js.org/" target="_blank" rel="noopener noreferrer">
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a className="App-link" href="https://react-redux.js.org/" target="_blank" rel="noopener noreferrer">
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Redirect path={AppRoutes.Root} to={AppRoutes.WorkoutsList} exact={true} />
+        <Route path={AppRoutes.WorkoutsList} exact={true}>
+          <WorkoutsList />
+        </Route>
+        <Route path={AppRoutes.Workout} exact={true} component={Workout} />
+      </Switch>
+    </Router>
   );
-}
+};
 
-export default App;
+export { App };

@@ -1,0 +1,20 @@
+.list {
+  list-style: none;
+  margin-left: 0;
+  min-width: 330px;
+  max-width: 530px;
+}
+
+.item {
+  display: block;
+  text-decoration: none;
+  color: initial;
+}
+
+.item:hover {
+  color: initial;
+}
+
+.item:not(:first-child) {
+  margin-top: 20px;
+}
