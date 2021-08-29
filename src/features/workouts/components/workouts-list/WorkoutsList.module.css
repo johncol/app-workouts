@@ -18,3 +18,14 @@
 .item:not(:first-child) {
   margin-top: 20px;
 }
+
+.card {
+  border: 1px solid var(--border-dark-10);
+  outline: 3px solid transparent;
+  transition: outline 0.2s ease-out, border 0.2s ease-out;
+}
+
+.item:hover .card {
+  outline-color: var(--border-dark-10);
+  border-color: transparent;
+}
