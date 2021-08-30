@@ -7,7 +7,7 @@ import { Workout } from './features/workouts/components/workout';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/react-redux-workouts">
       <Switch>
         <Route path={AppRoutes.WorkoutsList} exact={true} component={WorkoutsList} />
         <Route path={AppRoutes.Workout} exact={true} component={Workout} />
