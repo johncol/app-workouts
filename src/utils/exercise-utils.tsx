@@ -1,8 +1,8 @@
-import { RepetitionsBasedExercise, TimeBasedExercise } from '../types/workout';
+import { Exercise } from '../types/workout';
 
 class ExerciseUtils {
-  isTimeBased = (exercise: TimeBasedExercise | RepetitionsBasedExercise): boolean => {
-    return Object.keys(exercise).includes('duration');
+  unitHeaderOf = (exercise: Exercise) => {
+    return exercise.unit === 'seconds' ? 'Duration' : 'Repetitions';
   };
 }
 

@@ -33,6 +33,7 @@
 }
 
 .summary {
+  min-width: 450px;
   margin-top: 0;
   flex: 2;
   animation-duration: 0.5s;

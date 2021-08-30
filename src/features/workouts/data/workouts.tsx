@@ -13,7 +13,7 @@ const workouts: Workout[] = [
         duration: 10,
         description:
           'Run, bike, dance, row, swim, jump rope, shadow box—pick any one or any combination and go with it.',
-        circuit: [{ name: 'Chosen activity', duration: 600, rest: 30 }],
+        circuit: [{ name: 'Chosen activity', quantity: 600, unit: 'seconds', rest: 30 }],
       },
       {
         type: 'mobility',
@@ -21,16 +21,16 @@ const workouts: Workout[] = [
         description:
           'Circuit of Egyptians, lunge twists and standing leg circles. Do as many as possible in the allotted time.',
         circuit: [
-          { name: 'Egyptian', rest: 3, repetitions: 5 },
-          { name: 'Lunge Twist', rest: 3, repetitions: 5 },
-          { name: 'Standing Leg Circle', rest: 3, repetitions: 5 },
+          { name: 'Egyptian', rest: 3, quantity: 5, unit: 'repetitions' },
+          { name: 'Lunge Twist', rest: 3, quantity: 5, unit: 'repetitions' },
+          { name: 'Standing Leg Circle', rest: 3, quantity: 5, unit: 'repetitions' },
         ],
       },
       {
         type: 'power',
         duration: 3,
         description: 'Alternate split jump fox max height for 10 seconds, then 20 seconds rest. 6 sets.',
-        circuit: [{ name: 'Split Jump', rest: 20, duration: 10 }],
+        circuit: [{ name: 'Split Jump', rest: 20, quantity: 10, unit: 'seconds' }],
       },
       {
         type: 'strength',
@@ -40,7 +40,8 @@ const workouts: Workout[] = [
           {
             name: 'Frog push-ups',
             rest: 5,
-            repetitions: 3,
+            quantity: 3,
+            unit: 'repetitions',
             description: '5 seconds down, 5 seconds up',
           },
         ],
@@ -52,12 +53,14 @@ const workouts: Workout[] = [
         circuit: [
           {
             name: 'Plank',
-            duration: 40,
+            quantity: 40,
+            unit: 'seconds',
             rest: 20,
           },
           {
             name: 'Sit-Through',
-            duration: 40,
+            quantity: 40,
+            unit: 'seconds',
             rest: 20,
           },
         ],
@@ -69,27 +72,32 @@ const workouts: Workout[] = [
         circuit: [
           {
             name: 'Kneeling Hip Flexor Stretch - Left',
-            duration: 50,
+            quantity: 50,
+            unit: 'seconds',
             rest: 5,
           },
           {
             name: 'Kneeling Hip Flexor Stretch - Right',
-            duration: 50,
+            quantity: 50,
+            unit: 'seconds',
             rest: 5,
           },
           {
             name: 'Kneeling hamstring Stretch - Left',
-            duration: 50,
+            quantity: 50,
+            unit: 'seconds',
             rest: 5,
           },
           {
             name: 'Kneeling hamstring Stretch - Right',
-            duration: 50,
+            quantity: 50,
+            unit: 'seconds',
             rest: 5,
           },
           {
             name: 'Shouldder Bridge',
-            duration: 80,
+            quantity: 80,
+            unit: 'seconds',
             rest: 0,
           },
         ],
