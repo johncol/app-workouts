@@ -16,11 +16,11 @@ const WorkoutsList = () => {
         <ul className={styles.list}>
           {workouts.map((workout) => (
             <li key={workout.id} className={styles['list-item']}>
-              <WorkoutItem workout={workout} onSelected={() => setSelected(workout)} />
+              <WorkoutItem workout={workout} onSelected={() => setSelected(workout)} selected={workout === selected} />
             </li>
           ))}
         </ul>
-        {selected && <WorkoutSummary workout={selected} />}
+        <WorkoutSummary workout={selected} />
       </div>
     </div>
   );

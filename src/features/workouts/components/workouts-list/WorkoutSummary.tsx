@@ -4,10 +4,14 @@ import { Workout } from '../../../../types/workout';
 import styles from './WorkoutsList.module.css';
 
 interface Props {
-  workout: Workout;
+  workout: Workout | undefined;
 }
 
 const WorkoutSummary = ({ workout }: Props) => {
+  if (!workout) {
+    return <div className={`${styles.summary} ${styles.invisible} card b-dark-10 bg-light r-base flex`}></div>;
+  }
+
   return (
     <div className={`${styles.summary} card b-dark-10 bg-light r-base flex`}>
       <div className="card-box p-6 pb-10">
