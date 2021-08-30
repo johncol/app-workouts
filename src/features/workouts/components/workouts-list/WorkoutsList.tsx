@@ -9,6 +9,11 @@ import styles from './WorkoutsList.module.css';
 
 const WorkoutsList = () => {
   const [selected, setSelected] = useState<Workout>();
+  const updateSelection = (workout: Workout) => {
+    setSelected(undefined);
+    setTimeout(() => setSelected(workout), 30);
+  };
+
   return (
     <div>
       <h1>Workouts</h1>
@@ -16,7 +21,11 @@ const WorkoutsList = () => {
         <ul className={styles.list}>
           {workouts.map((workout) => (
             <li key={workout.id} className={styles['list-item']}>
-              <WorkoutItem workout={workout} onSelected={() => setSelected(workout)} selected={workout === selected} />
+              <WorkoutItem
+                workout={workout}
+                onSelected={() => updateSelection(workout)}
+                selected={workout === selected}
+              />
             </li>
           ))}
         </ul>

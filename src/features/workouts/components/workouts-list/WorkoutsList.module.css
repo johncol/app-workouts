@@ -35,6 +35,7 @@
 .summary {
   margin-top: 0;
   flex: 2;
+  animation-duration: 0.5s;
 }
 
 .invisible {
@@ -42,7 +43,7 @@
 }
 
 .summary-section-title {
-  margin-top: 3ch;
+  margin-top: 4ch;
   margin-bottom: 1ch;
 }
 
@@ -52,4 +53,8 @@
 
 .summary-actions {
   margin: 20px 0;
+}
+
+.exercise-table {
+  animation-duration: 0.5s;
 }

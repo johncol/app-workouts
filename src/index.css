@@ -1,5 +1,6 @@
 @import url('./../node_modules/modern-css-reset/dist/reset.css');
 @import url('./../node_modules/superkube/dist/superkube.css');
+@import url('./../node_modules/animate.css/animate.css');
 
 html {
   font-size: 10px;
