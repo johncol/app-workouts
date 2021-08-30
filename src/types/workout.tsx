@@ -1,3 +1,7 @@
+export interface WorkoutProp {
+  workout: Workout;
+}
+
 export interface Workout {
   id: string;
   name: string;

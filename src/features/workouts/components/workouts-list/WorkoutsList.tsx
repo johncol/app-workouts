@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { workouts } from '../../data/workouts';
-import { WorkOutItem } from './WorkListItem';
+import { WorkoutItem } from './WorkoutItem';
+import { WorkoutSummary } from './WorkoutSummary';
+import { Workout } from '../../../../types/workout';
 
 import styles from './WorkoutsList.module.css';
 
 const WorkoutsList = () => {
+  const [selected, setSelected] = useState<Workout>();
   return (
     <div>
-      <h2>Workouts</h2>
-      <ul className={styles.list}>
-        {workouts.map((workout) => (
-          <WorkOutItem key={workout.id} workout={workout} />
-        ))}
-      </ul>
+      <h1>Workouts</h1>
+      <div className={styles.container}>
+        <ul className={styles.list}>
+          {workouts.map((workout) => (
+            <li key={workout.id} className={styles['list-item']}>
+              <WorkoutItem workout={workout} onSelected={() => setSelected(workout)} />
+            </li>
+          ))}
+        </ul>
+        {selected && <WorkoutSummary workout={selected} />}
+      </div>
     </div>
   );
 };
