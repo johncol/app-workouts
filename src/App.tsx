@@ -9,11 +9,9 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Redirect path={AppRoutes.Root} to={AppRoutes.WorkoutsList} exact={true} />
-        <Route path={AppRoutes.WorkoutsList} exact={true}>
-          <WorkoutsList />
-        </Route>
+        <Route path={AppRoutes.WorkoutsList} exact={true} component={WorkoutsList} />
         <Route path={AppRoutes.Workout} exact={true} component={Workout} />
+        <Redirect path={AppRoutes.Root} to={AppRoutes.WorkoutsList} />
       </Switch>
     </Router>
   );
