@@ -40,6 +40,7 @@ const WorkoutItemCard = (props: CardProps) => {
       className={`${styles.item} ${props.selectedClass} card p-6 bg-light r-base sk-card-wide`}
       onClick={props.onSelected}
       onFocus={props.onSelected}
+      title="WorkoutItemCard"
     >
       <div className="card-caption mb-2">
         <span className="caption caption-positive">{props.caption}</span>

@@ -9,7 +9,7 @@ import styles from './WorkoutsList.module.css';
 
 const WorkoutsList = () => {
   const [selected, setSelected] = useState<Workout>();
-  const updateSelection = (workout: Workout) => {
+  const waitThenSetSelected = (workout: Workout) => {
     setSelected(undefined);
     setTimeout(() => setSelected(workout), 30);
   };
@@ -23,7 +23,7 @@ const WorkoutsList = () => {
             <li key={workout.id} className={styles['list-item']}>
               <WorkoutItem
                 workout={workout}
-                onSelected={() => updateSelection(workout)}
+                onSelected={() => waitThenSetSelected(workout)}
                 selected={workout === selected}
               />
             </li>

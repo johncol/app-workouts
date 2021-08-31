@@ -25,10 +25,13 @@ const WorkoutSummary = ({ workout }: Props) => {
   }
 
   return (
-    <div className={`${styles.summary} card b-dark-10 bg-light r-base flex animate__animated animate__fadeIn`}>
+    <div
+      title="WorkoutSummary"
+      className={`${styles.summary} card b-dark-10 bg-light r-base flex animate__animated animate__fadeIn`}
+    >
       <div className="card-box p-6 pb-10">
         <div className="card-caption mb-2">
-          <span className="label label-positive text-large">{workout.name}</span>
+          <h3 className="label label-positive text-large">{workout.name}</h3>
           <WorkoutSummaryActions
             expandedDescription={expanded}
             onSelect={() => setSelected(true)}
