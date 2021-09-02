@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 
 import { AppRoutes } from '../../../../routes';
@@ -15,6 +15,12 @@ interface Props {
 const WorkoutSummary = ({ workout }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const [selected, setSelected] = useState(false);
+
+  useEffect(() => {
+    if (!workout) {
+      setExpanded(false);
+    }
+  }, [workout]);
 
   if (!workout) {
     return <div className={`${styles.summary} ${styles.invisible}`} />;
