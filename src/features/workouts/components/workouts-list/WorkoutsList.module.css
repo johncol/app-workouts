@@ -59,3 +59,7 @@
 .exercise-table {
   animation-duration: 0.5s;
 }
+
+.exercise-illustration {
+  max-width: 100px;
+}

@@ -23,6 +23,7 @@ export interface Exercise {
   description?: string;
   quantity: Seconds | Repetitions;
   unit: 'seconds' | 'repetitions';
+  image?: string;
 }
 
 export type Repetitions = number;

@@ -33,7 +33,7 @@ const WorkoutSummary = ({ workout }: Props) => {
   return (
     <div
       title="WorkoutSummary"
-      className={`${styles.summary} card b-dark-10 bg-light r-base flex animate__animated animate__fadeIn`}
+      className={`${styles.summary} card b-dark-10 bg-light r-base animate__animated animate__fadeIn`}
     >
       <div className="card-box p-6 pb-10">
         <div className="card-caption mb-2">

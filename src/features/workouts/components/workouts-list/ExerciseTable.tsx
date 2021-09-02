@@ -21,6 +21,7 @@ const ExerciseTable = ({ section }: Props) => {
           <th className="w-50">Excercise</th>
           <th className={`w-25`}>{exerciseUtils.unitHeaderOf(section.circuit[0])}</th>
           <th>Rest</th>
+          <th>Illustration</th>
         </tr>
       </thead>
       <tbody>
@@ -31,10 +32,34 @@ const ExerciseTable = ({ section }: Props) => {
               {exercise.quantity} {exercise.unit}
             </td>
             <td>{exercise.rest} seconds</td>
+            <td>
+              <Illustration exercise={exercise} />
+            </td>
           </tr>
         ))}
       </tbody>
     </table>
+  );
+};
+
+interface IllustrationProp {
+  exercise: Exercise;
+}
+
+const Illustration = ({ exercise }: IllustrationProp) => {
+  if (!exercise.image) {
+    return <span className="label">No image</span>;
+  }
+
+  const imageUrl = `${process.env.PUBLIC_URL}/illustrations/${exercise.image}`;
+  return (
+    <a href={imageUrl} target="_blank" rel="noopener noreferrer">
+      <img
+        src={imageUrl}
+        alt={`Exercise illustration: ${exercise.image}`}
+        className={styles['exercise-illustration']}
+      />
+    </a>
   );
 };
 
