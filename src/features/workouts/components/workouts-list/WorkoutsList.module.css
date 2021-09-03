@@ -58,8 +58,10 @@
 
 .exercise-table {
   animation-duration: 0.5s;
+  max-width: 1000px;
 }
 
 .exercise-illustration {
-  max-width: 100px;
+  width: 10vw;
+  max-width: 200px;
 }
